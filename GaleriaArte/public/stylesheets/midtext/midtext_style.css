@@ -1,0 +1,64 @@
+#ppal {
+  background-color: #272727;
+  width: 100%;
+  padding: 4rem 0;
+}
+#ppal h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 7rem;
+  text-align: center;
+  font-size: 30px;
+  width: 100%;
+  color: #eeeeee;
+  font-family: Nunito;
+}
+#ppal #buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#ppal #buttons .boton {
+  width: 570px;
+  height: 300px;
+  position: relative;
+  filter: saturate(0);
+}
+#ppal #buttons .boton img {
+  filter: blur(1px);
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#ppal #buttons .boton h2 {
+  position: absolute;
+  top: 55px;
+  left: 32%;
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: "Metamorphous", cursive;
+}
+#ppal #buttons .boton a {
+  position: absolute;
+  top: 210px;
+  left: 37%;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 0.5rem 1.5rem;
+  background: #eeeeee;
+  border-radius: 2px;
+  font-weight: bold;
+  color: #7799C0;
+  font-family: Nunito;
+}
+#ppal #buttons .boton a:hover {
+  transition: 0.5s;
+  background-color: #242424;
+}
+#ppal #buttons .boton:hover {
+  filter: saturate(1);
+  transition: 0.3s;
+}/*# sourceMappingURL=midtext_style.css.map */
