@@ -1,0 +1,74 @@
+#nav
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    align-items: center
+    height: 100px
+    background-color: #272727
+    font-family: 'Metamorphous', cursive
+    img
+        width: 44px
+    h2
+        letter-spacing: 16px
+        color: #eeeeee
+    #nav-buttons
+        display: flex
+        float: right
+        li
+            margin-left: 10px
+            margin-right: 10px
+            display: inline-block
+            a
+                text-decoration: none
+                font-size: 1.2rem
+                color: #7799C0
+.checkbtn
+    font-size: 30px
+    color: #fff
+    float: right
+    line-height: 80px
+    margin-right: 40px
+    cursor: pointer
+    display: none
+
+#check
+    display: none
+
+@media only screen and (max-width: 768px)
+    .checkbtn
+        display: block
+    #nav
+        justify-content: space-between
+    ul
+        display: flex
+        flex-direction: column
+        position: absolute
+        width: 100%
+        height: 100%
+        background: #272727
+        top: 100px
+        left: -105%
+        text-align: center
+        transition: .5s
+        box-sizing: border-box
+        z-index: 5
+    nav ul li
+        display: block
+        margin: 5px 0
+        line-height: 9px
+        display: flex
+        flex-direction: column
+        padding: 1rem 0
+
+    nav ul li a
+        font-size: 20px
+    #check:checked ~ ul
+        left: 0
+        opacity: 1
+        flex-direction: column
+        overflow: hidden
+
+
+
+    
+    
