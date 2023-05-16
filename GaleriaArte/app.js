@@ -11,14 +11,25 @@ const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+
+//motor de render de vistas
 app.set('view engine', 'ejs');
 
+//logger por consola
 app.use(logger('dev'));
+
+//middlewares para tratado de datos
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+//cookies
 app.use(cookieParser());
+
+//archivos estaticos
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+//rutas
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
