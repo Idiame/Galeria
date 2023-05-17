@@ -12,6 +12,9 @@
 }
 #nav h2 {
   letter-spacing: 16px;
+}
+#nav h2 a {
+  text-decoration: none;
   color: #eeeeee;
 }
 #nav #nav-buttons {

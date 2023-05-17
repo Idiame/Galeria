@@ -1,59 +1,47 @@
-img {
-  block-size: auto;
-  max-inline-size: 100%;
-  vertical-align: middle;
+.gallery {
+  display: flex;
+  padding: 2px;
+  transition: 0.3s;
 }
-
-/* Embed */
-.embed {
+.gallery:hover .gallery__image {
+  filter: grayscale(1);
+}
+.gallery__column {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+.gallery__link {
+  margin: 2px;
   overflow: hidden;
-  -webkit-padding-before: 100%;
-          padding-block-start: 100%;
+}
+.gallery__link:hover .gallery__image {
+  filter: grayscale(0);
+}
+.gallery__link:hover .gallery__caption {
+  opacity: 1;
+}
+.gallery__thumb {
   position: relative;
 }
-
-.embed--1-2 {
-  padding-top: 200%;
-}
-
-.embed--2-1 {
-  padding-top: 50%;
-}
-
-.embed--2-3 {
-  padding-top: 150%;
-}
-
-.embed > * {
-  height: 100%;
-  left: 0;
-  -o-object-fit: cover;
-     object-fit: cover;
-  padding: 0.25em;
-  position: absolute;
-  top: 0;
+.gallery__image {
+  display: block;
   width: 100%;
+  transition: 0.3s;
 }
-
-/* Gallery  */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+.gallery__image:hover {
+  transform: scale(1.1);
 }
-
-.gallery__item--h-2 {
-  grid-column-end: span 2;
-}
-
-.gallery__item--h-3 {
-  grid-column-end: span 3;
-}
-
-.gallery__item--v-2 {
-  grid-row-end: span 2;
-}
-
-.gallery__item--v-3 {
-  grid-row-end: span 3;
+.gallery__caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 25px 15px 15px;
+  width: 100%;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  color: white;
+  opacity: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+  transition: 0.3s;
 }/*# sourceMappingURL=gallery_grid.css.map */
