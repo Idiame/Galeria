@@ -1,7 +1,15 @@
+h1 {
+  text-align: center;
+  color: #7799C0;
+  margin: 3rem;
+  font-family: "Metamorphous", cursive;
+}
+
 .gallery {
   display: flex;
   padding: 2px;
   transition: 0.3s;
+  font-family: Nunito;
 }
 .gallery:hover .gallery__image {
   filter: grayscale(1);
