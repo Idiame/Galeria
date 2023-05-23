@@ -4,6 +4,7 @@
   justify-content: space-around;
   align-items: center;
   height: 100px;
+  width: 100%;
   background-color: #272727;
   font-family: "Metamorphous", cursive;
 }
@@ -12,6 +13,8 @@
 }
 #nav h2 {
   letter-spacing: 16px;
+  margin-left: 11rem;
+  text-align: center;
 }
 #nav h2 a {
   text-decoration: none;
@@ -52,6 +55,9 @@
   }
   #nav {
     justify-content: space-between;
+  }
+  #nav h2 {
+    margin-left: 1rem;
   }
   ul {
     display: flex;

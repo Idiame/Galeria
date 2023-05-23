@@ -7,7 +7,7 @@
 
       <!-- HOJAS DE ESTILOS -->
     <link rel="stylesheet" href="/stylesheets/nav/nav_style.css">
-    <link rel="stylesheet" href="/stylesheets/postscss">
+    <link rel="stylesheet" href="/stylesheets/upload.css">
 
 
     <!-- FONT AWESOME -->
@@ -29,23 +29,25 @@
     <%- include ('./partials/nav.ejs')%>
 
     <form  method="POST" action="/upload" enctype="multipart/form-data">
-        <input name="image" type="file" />
-        <input type="submit">
+        <div>
+          <h2>Upload your Artwork!</h2>
+          <input name="image" type="file" />
+          <input type="submit">
+        </div>
+
     </form>
 
 
-    <!-- <div class="upload-gallery">
+    <div class="upload-gallery">
         <% images.forEach(image => { %>
-          <img src="/uploads/<%= image %>" alt="<%= image %>">
-          <% }); %>
-        </div> -->
+          <h1><%= image %></h1>
+          <img src="/images/1684799962315.jpg" alt="">
+          <img src="<%= image %>" alt="<%= image %>">
+          <% });  %>
+          <img src="#" alt="">
+    </div>
         
-        <img src="/uploads/1684799962315.jpg" alt="">
 
-
-    
-      
-      
 
 </body>
 </html>
