@@ -19,8 +19,8 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
+
 router.get('/', (req, res, next) => {
-  
   const imagesDir = path.join(__dirname, 'uploads');
 
   fs.readdir(imagesDir, (err, files) => {
@@ -34,9 +34,16 @@ router.get('/', (req, res, next) => {
       return extname === '.jpg' || extname === '.jpeg' || extname === '.png' || extname === '.gif';
     });
 
+    imageFiles.forEach(image => {
+      const imagePath = path.join(imagesDir, image);
+      console.log('Ruta de la imagen:', imagePath);
+    });
+
     res.render('upload', { images: imageFiles });
   });
 });
+
+
 
 router.post('/', upload.single('image'), (req, res, next) => {
   res.redirect('/upload');

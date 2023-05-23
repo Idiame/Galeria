@@ -28,11 +28,16 @@
         <input type="submit">
     </form>
 
+
     <div class="upload-gallery">
-        <% images.forEach(image => { %>
-          <img src="../routes/uploads/image %>" alt="<%= image %>">
-        <% }); %>
-      </div>
+    <% images.forEach(image => { %>
+        <img src="<%= image %>" alt="<%= image %>">
+
+    <% }); %>
+    </div>
+    
+      
+      
 
 </body>
 </html>

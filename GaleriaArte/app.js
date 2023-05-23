@@ -31,6 +31,8 @@ app.use(cookieParser());
 
 //archivos estaticos
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'uploads')));
+
 
 
 //rutas
