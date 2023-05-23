@@ -25,6 +25,8 @@ app.use(logger('dev'));
 //middlewares para tratado de datos
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
+
 
 //cookies
 app.use(cookieParser());

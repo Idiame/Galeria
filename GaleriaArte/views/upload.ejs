@@ -17,6 +17,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Metamorphous&family=Nunito&display=swap" rel="stylesheet">
+
+
+    <!-- CDN iQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   
     <title>Posts</title>
 </head>
@@ -29,12 +34,15 @@
     </form>
 
 
-    <div class="upload-gallery">
-    <% images.forEach(image => { %>
-        <img src="<%= image %>" alt="<%= image %>">
+    <!-- <div class="upload-gallery">
+        <% images.forEach(image => { %>
+          <img src="/uploads/<%= image %>" alt="<%= image %>">
+          <% }); %>
+        </div> -->
+        
+        <img src="/uploads/1684799962315.jpg" alt="">
 
-    <% }); %>
-    </div>
+
     
       
       

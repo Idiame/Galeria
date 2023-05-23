@@ -6,6 +6,8 @@ const fs = require('fs');
 
 const multer = require('multer');
 
+const imagesDir = path.join(__dirname, 'uploads');
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     const uploadsPath = path.resolve(__dirname, 'uploads');
@@ -19,10 +21,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-
-router.get('/', (req, res, next) => {
-  const imagesDir = path.join(__dirname, 'uploads');
-
+router.get('/', (req, res) => {
   fs.readdir(imagesDir, (err, files) => {
     if (err) {
       console.error('Error al leer el directorio de imágenes:', err);
@@ -34,14 +33,32 @@ router.get('/', (req, res, next) => {
       return extname === '.jpg' || extname === '.jpeg' || extname === '.png' || extname === '.gif';
     });
 
-    imageFiles.forEach(image => {
-      const imagePath = path.join(imagesDir, image);
-      console.log('Ruta de la imagen:', imagePath);
-    });
-
     res.render('upload', { images: imageFiles });
   });
 });
+
+// router.get('/', (req, res, next) => {
+//   const imagesDir = path.join(__dirname, 'uploads');
+
+//   fs.readdir(imagesDir, (err, files) => {
+//     if (err) {
+//       console.error('Error al leer el directorio de imágenes:', err);
+//       return res.status(500).send('Error al leer el directorio de imágenes');
+//     }
+
+//     const imageFiles = files.filter(file => {
+//       const extname = path.extname(file).toLowerCase();
+//       return extname === '.jpg' || extname === '.jpeg' || extname === '.png' || extname === '.gif';
+//     });
+
+//     imageFiles.forEach(image => {
+//       const imagePath = path.join(imagesDir, image);
+//       console.log('Ruta de la imagen:', imagePath);
+//     });
+
+//     res.render('upload', { images: imageFiles });
+//   });
+// });
 
 
 
