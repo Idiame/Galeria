@@ -61,4 +61,18 @@
 #ppal #buttons .boton:hover {
   filter: saturate(1);
   transition: 0.3s;
+}
+
+@media only screen and (max-width: 780px) {
+  #buttons {
+    display: flex;
+    flex-direction: column !important;
+    overflow-x: hidden;
+  }
+  #buttons .boton {
+    margin: 10px 0px;
+  }
+  #buttons .boton a {
+    background-color: #242424;
+  }
 }/*# sourceMappingURL=midtext_style.css.map */
