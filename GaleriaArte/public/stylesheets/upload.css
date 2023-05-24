@@ -15,7 +15,8 @@
 * form div {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  height: 80%;
   align-items: center;
   background-color: #242424;
   border-radius: 4px;
@@ -23,4 +24,82 @@
 }
 * form div input {
   padding: 0.5rem 1rem;
+  font-family: Nunito;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: 0.3s;
+  border-radius: 3px;
+}
+* form div #btn:hover {
+  color: #fff;
+  background-color: #7799C0;
+  transition: 0.3s;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+}
+* form div h2 {
+  color: #fff;
+  font-family: "Metamorphous", cursive;
+}
+* form div h2 span {
+  color: #7799C0;
+}
+
+body {
+  background-color: #272727;
+}
+
+.upload-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  background-color: #272727;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.image-item {
+  display: flex;
+  justify-content: center;
+}
+
+.upload-gallery .image-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.3s;
+}
+
+.image-item img:hover {
+  transform: scale(1.05);
+}
+
+@media only screen and (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 434px) {
+  .image-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }/*# sourceMappingURL=upload.css.map */

@@ -30,20 +30,24 @@
 
     <form  method="POST" action="/upload" enctype="multipart/form-data">
         <div>
-          <h2>Upload your Artwork!</h2>
-          <input name="image" type="file" />
-          <input type="submit">
+          <h2>Share your <span>Artwork</span>!</h2>
+          <input name="image" type="file"/>
+          <input type="submit" value="Upload now!" id="btn">
         </div>
 
     </form>
 
-
     <div class="upload-gallery">
+      <div class="image-grid">
         <% images.forEach(image => { %>
-          <img src="<%= image %>" alt="<%= image %>">
-          <% });  %>
+          <div class="image-item">
+            <img src="<%= image %>" alt="<%= image %>">
+          </div>
+        <% }); %>
+      </div>
     </div>
-        
+    
+
 
 
 </body>
