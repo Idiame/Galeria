@@ -4,7 +4,8 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-
+const { database } = require('./keys')
+const session = require('express-session')
 
 const indexRouter = require('./routes/index');
 const galleryRouter = require('./routes/gallery');
@@ -18,6 +19,16 @@ app.set('views', path.join(__dirname, 'views'));
 
 //motor de render de vistas
 app.set('view engine', 'ejs');
+
+//Middlewares
+
+// app.use(session({
+//   secret: 'pudin',
+//   resave: false,
+//   saveUninitialized: false,
+//   store: new smysql(database)
+// }))
+
 
 //logger por consola
 app.use(logger('dev'));
