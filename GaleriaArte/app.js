@@ -6,6 +6,9 @@ const logger = require('morgan');
 
 const { database } = require('./keys')
 const session = require('express-session')
+const smysql = require('express-mysql-session')
+
+const mysql = require('mysql2/promise');
 
 const indexRouter = require('./routes/index');
 const galleryRouter = require('./routes/gallery');
@@ -13,6 +16,29 @@ const uploadRouter = require('./routes/upload')
 
 
 const app = express();
+
+const addUser = async () => {
+  try {
+    const pool = mysql.createPool(database);
+    const connection = await pool.getConnection();
+
+    const newUser = {
+      username: 'test',
+      password: '123',
+      email: 'test@example.com'
+    };
+
+    const query = 'INSERT INTO users (username, password, email) VALUES (?, ?, ?)';
+    const [result] = await connection.query(query, [newUser.username, newUser.password, newUser.email]);
+    console.log('Usuario insertado con ID:', result.insertId);
+
+    connection.release();
+  } catch (error) {
+    console.error('Error al insertar el usuario:', error);
+  }
+};
+
+// addUser();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,6 +49,7 @@ app.set('view engine', 'ejs');
 //Middlewares
 
 // app.use(session({
+//   key: 'active_user',
 //   secret: 'pudin',
 //   resave: false,
 //   saveUninitialized: false,

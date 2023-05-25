@@ -4,13 +4,8 @@ const{database} = require('./keys')
 
 const pool = mysql.createPool(database)
 
-const hola = async () => {
+console.log('conexion con la base de datos correctamente')
 
-    const [result] = await pool.query("show tables;")
 
-    console.log(result)
-}
-
-hola()
 
 module.exports = pool
