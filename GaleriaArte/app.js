@@ -48,13 +48,12 @@ app.set('view engine', 'ejs');
 
 //Middlewares
 
-// app.use(session({
-//   key: 'active_user',
-//   secret: 'pudin',
-//   resave: false,
-//   saveUninitialized: false,
-//   store: new smysql(database)
-// }))
+app.use(session({
+  secret: 'pudin',
+  resave: false,
+  saveUninitialized: false,
+  store: new smysql(database)
+}))
 
 
 //logger por consola

@@ -3,7 +3,7 @@
   margin: 0;
   box-sizing: border-box;
 }
-* form {
+* .upload-section {
   width: 100%;
   height: 400px;
   justify-content: center;
@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: column;
 }
-* form div {
+* .upload-section div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -22,7 +22,21 @@
   border-radius: 4px;
   padding: 3rem;
 }
-* form div input {
+* .upload-section div a {
+  text-decoration: none;
+  color: #fff;
+  font-family: Nunito;
+  transition: 0.3s;
+}
+* .upload-section div a:hover {
+  color: #7799C0;
+  transition: 0.3s;
+}
+* .upload-section div p {
+  color: #7799C0;
+  font-family: Nunito;
+}
+* .upload-section div input {
   padding: 0.5rem 1rem;
   font-family: Nunito;
   cursor: pointer;
@@ -31,7 +45,7 @@
   transition: 0.3s;
   border-radius: 3px;
 }
-* form div #btn:hover {
+* .upload-section div #btn:hover {
   color: #fff;
   background-color: #7799C0;
   transition: 0.3s;
@@ -39,11 +53,11 @@
   outline: none;
   border: none;
 }
-* form div h2 {
+* .upload-section div h2 {
   color: #fff;
   font-family: "Metamorphous", cursive;
 }
-* form div h2 span {
+* .upload-section div h2 span {
   color: #7799C0;
 }
 

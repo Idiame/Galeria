@@ -28,7 +28,7 @@
 <body>
     <%- include ('./partials/nav.ejs')%>
 
-    <form  method="POST" action="/upload" enctype="multipart/form-data">
+    <form  method="POST" action="/upload" enctype="multipart/form-data" class="upload-section">
         <div>
           <h2>Share your <span>Artwork</span>!</h2>
           <input name="image" type="file"/>
@@ -36,6 +36,18 @@
         </div>
 
     </form>
+
+    <div class="upload-section">
+      <div>
+        <h2>Share your <span>Artwork</span>!</h2>
+        <div>
+          <h3><a href="#">Log In</a></h3>
+          <p>or</p>
+          <h4><a href="">Create an Account</a></h4>
+        </div>
+      </div>
+
+  </div>
 
     <div class="upload-gallery">
       <div class="image-grid">
