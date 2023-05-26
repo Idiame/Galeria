@@ -7,12 +7,14 @@ const logger = require('morgan');
 const { database } = require('./keys')
 const session = require('express-session')
 const smysql = require('express-mysql-session')
+const passport = require('passport')
 
 const mysql = require('mysql2/promise');
 
 const indexRouter = require('./routes/index');
 const galleryRouter = require('./routes/gallery');
 const uploadRouter = require('./routes/upload')
+const authenticationRouter = require('./routes/authentication')
 
 
 const app = express();
@@ -62,6 +64,8 @@ app.use(logger('dev'));
 //middlewares para tratado de datos
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
 
@@ -78,6 +82,7 @@ app.use(express.static(path.join(__dirname, 'uploads')));
 app.use('/', indexRouter);
 app.use('/gallery', galleryRouter);
 app.use('/upload', uploadRouter);
+app.use('/authentication', authenticationRouter)
 
 
 // catch 404 and forward to error handler
