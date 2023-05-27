@@ -19,28 +19,8 @@ const authenticationRouter = require('./routes/authentication')
 
 const app = express();
 
-const addUser = async () => {
-  try {
-    const pool = mysql.createPool(database);
-    const connection = await pool.getConnection();
+require('./lib/passport')
 
-    const newUser = {
-      username: 'test',
-      password: '123',
-      email: 'test@example.com'
-    };
-
-    const query = 'INSERT INTO users (username, password, email) VALUES (?, ?, ?)';
-    const [result] = await connection.query(query, [newUser.username, newUser.password, newUser.email]);
-    console.log('Usuario insertado con ID:', result.insertId);
-
-    connection.release();
-  } catch (error) {
-    console.error('Error al insertar el usuario:', error);
-  }
-};
-
-// addUser();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -72,10 +52,10 @@ app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 //cookies
 app.use(cookieParser());
 
+
 //archivos estaticos
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'uploads')));
-
 
 
 //rutas

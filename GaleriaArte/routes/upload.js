@@ -5,6 +5,7 @@ const path = require('path');
 const fs = require('fs');
 
 const multer = require('multer');
+const { isLoggedIn} = require("../lib/auth");
 
 const imagesDir = path.join(__dirname, 'uploads');
 
@@ -40,6 +41,7 @@ router.get('/', (req, res, next) => {
       console.log('Ruta de la imagen:', imagePath);
     });
 
+    // const isLogged = usuarioBien()
     res.render('upload', { images: imageFiles });
   });
 });

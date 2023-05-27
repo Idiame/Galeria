@@ -28,14 +28,15 @@
 <body>
     <%- include ('./partials/nav.ejs')%>
 
-    <form  method="POST" action="/upload" enctype="multipart/form-data" class="upload-section">
-        <div>
-          <h2>Share your <span>Artwork</span>!</h2>
-          <input name="image" type="file"/>
-          <input type="submit" value="Upload now!" id="btn">
-        </div>
 
-    </form>
+      <form  method="POST" action="/upload" enctype="multipart/form-data" class="upload-section">
+          <div>
+            <h2>Share your <span>Artwork</span>!</h2>
+            <input name="image" type="file"/>
+            <input type="submit" value="Upload now!" id="btn">
+          </div>
+  
+      </form>
 
     <div class="upload-section">
       <div>
@@ -47,7 +48,8 @@
         </div>
       </div>
 
-  </div>
+    </div>
+
 
     <div class="upload-gallery">
       <div class="image-grid">

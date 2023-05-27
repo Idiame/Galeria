@@ -8,18 +8,18 @@ router.get('/register', isNotLogged,(req, res, next)=>{
     res.render('auth/register')
 })
 router.post('/register', isNotLogged, passport.authenticate('local.signup',{
-    successRedirect: '/gallery',
+    successRedirect: '/upload',
     failureRedirect: '/authentication/register'
 }))
 
 router.get('/login', isNotLogged, (req, res)=>{
     res.render('auth/login')
 })
-router.post('/login', isNotLogged, (req, res, next)=>{
+router.post('/login', isNotLogged,
     passport.authenticate('local.signin',{
-        successRedirect: '/gallery',
+        successRedirect: '/upload',
         failureRedirect: '/authentication/login'
     })
-})
+)
 
 module.exports = router;
