@@ -42,7 +42,7 @@ router.get('/', (req, res, next) => {
     });
 
     // const isLogged = usuarioBien()
-    res.render('upload', { images: imageFiles });
+    res.render('upload', { images: imageFiles,  user: req.user});
   });
 });
 

@@ -8,6 +8,7 @@
       <!-- HOJAS DE ESTILOS -->
     <link rel="stylesheet" href="/stylesheets/nav/nav_style.css">
     <link rel="stylesheet" href="/stylesheets/upload.css">
+    <link rel="stylesheet" href="/stylesheets/footer/footer.css">
 
 
     <!-- FONT AWESOME -->
@@ -26,6 +27,41 @@
     <title>Posts</title>
 </head>
 <body>
+  <%- include('./partials/nav.ejs') %>
+  <% if (user) { %>
+      <form  method="POST" action="/upload" enctype="multipart/form-data" class="upload-section">
+          <div>
+              <h2>Share your <span>Artwork</span>!</h2>
+              <input name="image" type="file"/>
+              <input type="submit" value="Upload now!" id="btn">
+          </div>
+      </form>
+  <% } else { %>
+      <div class="upload-section">
+          <div>
+              <h2>Share your <span>Artwork</span>!</h2>
+              <div>
+                  <h3><a href="/authentication/login">Log In</a></h3>
+                  <p>or</p>
+                  <h4><a href="/authentication/register">Create an Account</a></h4>
+              </div>
+          </div>
+      </div>
+  <% } %>
+
+  <div class="upload-gallery">
+      <div class="image-grid">
+          <% images.forEach(image => { %>
+              <div class="image-item">
+                  <img src="<%= image %>" alt="<%= image %>">
+              </div>
+          <% }); %>
+      </div>
+  </div>
+  <%- include('./partials/footer.ejs') %>
+</body>
+
+<!-- <body>
     <%- include ('./partials/nav.ejs')%>
 
 
@@ -64,5 +100,5 @@
 
 
 
-</body>
+</body> -->
 </html>

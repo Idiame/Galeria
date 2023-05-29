@@ -4,15 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+      <!-- HOJAS DE ESTILOS -->
+    <link rel="stylesheet" href="/stylesheets/nav/nav_style.css">
+    <link rel="stylesheet" href="/stylesheets/auth/login.css">
+    <link rel="stylesheet" href="/stylesheets/footer/footer.css">
+
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- FUENTES UTILIZADAS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Metamorphous&family=Nunito&display=swap" rel="stylesheet">
+
+
+    <!-- CDN iQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  
+    <title>Login</title>
 </head>
 <body>
+    <%- include('../partials/nav.ejs') %>
     <div>
+        <h2>LogIn and <span>share</span>!</h2>
         <form action="/authentication/login" method="POST">
             <input type="text" name="username" placeholder="Username">
             <input type="password" name="password" placeholder="Password">
-            <input type="submit" value="LogIn">
+            <input type="submit" value="LogIn" id="btn">
         </form>
     </div>
+
+    <!-- <%- include('../partials/footer.ejs') %> -->
 </body>
 </html>

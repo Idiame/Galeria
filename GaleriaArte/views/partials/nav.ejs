@@ -1,10 +1,13 @@
 <nav id="nav">  
-    <img src="images/TzeentchMark.webp">
+    <img src="/images/TzeentchMark.webp">
     <h2><a href="/">Nine Eyes</a></h2>
     <input type="checkbox" id="check">
     <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label>
     <ul id="nav-buttons">
       <li><a href="/gallery">Gallery</a></li>
       <li><a href="/upload">Artwork</a></li>
+      <% if (user) { %>
+      <li><a href="/authentication/logout">Logout</a></li>
+      <% } %>
     </ul>
   </nav>
