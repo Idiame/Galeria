@@ -6,4 +6,10 @@
 
 body {
   background-color: #272727;
+}
+
+@media only screen and (max-width: 670px) {
+  body {
+    overflow-x: hidden;
+  }
 }/*# sourceMappingURL=main.css.map */
