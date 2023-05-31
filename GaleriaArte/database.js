@@ -8,7 +8,16 @@ console.log('conexion con la base de datos correctamente')
 
 
 module.exports = {
-    query: (...args) => pool.query(...args).finally(() => pool.release()),
+    query: (...args) => {
+      return new Promise((resolve, reject) => {
+        pool.query(...args)
+          .then(([result]) => resolve(result))
+          .catch(reject)
+          .finally(() => {
+            pool.end(); // Cierra el pool de conexiones
+          });
+      });
+    },
   };
 
 // module.exports = pool
