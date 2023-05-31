@@ -81,4 +81,14 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+// Cierre del pool de conexiones
+const pool = require('./database');
+process.on('exit', () => {
+  pool.end().then(() => {
+    console.log('Conexiones cerradas correctamente.');
+  }).catch((err) => {
+    console.error('Error al cerrar las conexiones:', err);
+  });
+});
+
 module.exports = app;
