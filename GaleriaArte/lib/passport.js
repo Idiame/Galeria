@@ -68,7 +68,7 @@ passport.use('local.signup', new localStrategy({
         from: 'germanmazku@gmail.com',
         to: email,
         subject: 'Nueva Cuenta',
-        text: 'Gracias por registre en Nine Eyes!'
+        text: 'Gracias por registrarte en Nine Eyes!'
         
       
       };

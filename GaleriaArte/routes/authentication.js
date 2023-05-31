@@ -9,7 +9,7 @@ router.get('/register', isNotLogged,(req, res, next)=>{
 })
 router.post('/register', isNotLogged, passport.authenticate('local.signup',{
     successRedirect: '/upload',
-    failureRedirect: '/authentication/register'
+    failureRedirect: '/authentication/login'
 }))
 
 router.get('/login', isNotLogged, (req, res)=>{
