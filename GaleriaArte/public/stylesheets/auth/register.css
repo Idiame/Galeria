@@ -58,6 +58,21 @@ div form h2 {
 div form h2 span {
   color: #7799C0;
 }
+div form p, div form a {
+  font-family: Nunito;
+}
+div form a {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+}
+div form a:hover {
+  color: #7799C0;
+  transition: 0.3s;
+}
+div form p {
+  color: rgba(119, 153, 192, 0.5490196078);
+}
 
 @media only screen and (max-width: 768px) {
   div form {

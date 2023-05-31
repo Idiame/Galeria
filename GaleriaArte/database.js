@@ -7,4 +7,8 @@ const pool = mysql.createPool(database)
 console.log('conexion con la base de datos correctamente')
 
 
-module.exports = pool
+module.exports = {
+    query: (...args) => pool.query(...args).finally(() => pool.release()),
+  };
+
+// module.exports = pool
