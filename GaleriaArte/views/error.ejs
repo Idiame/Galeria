@@ -1,3 +1,28 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- HOJAS DE ESTILOS -->
+    <link rel="stylesheet" href="/stylesheets/error.css">
+
+      <!-- FUENTES UTILIZADAS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Metamorphous&family=Nunito&display=swap" rel="stylesheet">
+    <title>Error :c</title>
+</head>
+<body>
+    <div id="primero">
+        <div id="segundo">
+            <h1><%= error.status %></h1>
+            <h2><%= message %></h2>
+            <img src="https://media.tenor.com/qqApPVD1spMAAAAM/heresy-detected-no-heresy.gif" alt="">
+            <a href="/">Take me back to the <span>home </span>page</a>
+        </div>
+    </div>
+    <!-- <pre><%= error.stack %></pre> -->
+    
+</body>
+</html>

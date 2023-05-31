@@ -208,7 +208,7 @@ autoplay {   /* position of the first slide */
   animation-iteration-count: infinite;
 }
 
-.slider__switch:checked + .slider + .slider__control > label { background: #455a64; }
+.slider__switch:checked + .slider + .slider__control > label { background: #7799C0; }
 
 .slider__switch:checked + .slider + .slider__control > label:after { left: 2.75rem; }
 
