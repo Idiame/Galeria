@@ -1,7 +1,4 @@
 
-
-
-
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block }
 
 body { line-height: 1 }
@@ -23,23 +20,22 @@ table {
 
 hidden { display: none; }
 
-/**
- * Keyframes for autoplay
- */
+
+/* USO DE KEYFRAMES */
 @-webkit-keyframes 
-autoplay {   /* position of the first slide */
+autoplay {   /* POSICION DEL SLIDER */
     0% {
    left: 0;
   }
-    /* position of the second slide */
+    /* posicion de la 2a slide */
     10% {
    left: -40.625rem;
   }
-    /* position of the third slide */
+    /* posicion de la 3a slide */
     20% {
    left: -81.25rem;
   }
-    /* position of the fourth slide */
+    /* posicion de la 5a slide */
     30% {
    left: -121.875rem;
   }
@@ -69,19 +65,19 @@ autoplay {   /* position of the first slide */
      }
 }
 @keyframes 
-autoplay {   /* position of the first slide */
+autoplay {   /* POSICION DEL SLIDER */
     0% {
    left: 0;
   }
-    /* position of the second slide */
+    /* posicion de la 2a slide */
     10% {
    left: -40.625rem;
   }
-    /* position of the third slide */
+    /* posicion de la 3a slide */
     20% {
    left: -81.25rem;
   }
-    /* position of the fourth slide */
+    /* posicion de la 4a slide */
     30% {
    left: -121.875rem;
   }
@@ -111,13 +107,9 @@ autoplay {   /* position of the first slide */
      }
 }
 
-/**
- * Slider
- */
 
 .slider {
   position: relative;
-  /* top margin is for purposes of demo */
   margin-top: 3rem;
   margin-right: auto;
   margin-left: auto;
@@ -142,9 +134,7 @@ autoplay {   /* position of the first slide */
     object-fit: cover;
 }
 
-/**
- * Slider control
- */
+/*BOTON DE AUTOPLAY*/
 
 .slider__control {
   margin-right: auto;
@@ -201,7 +191,7 @@ autoplay {   /* position of the first slide */
 .slider__switch:checked + .slider > .slider__list {
   -webkit-name: autoplay;
   animation-name: autoplay;
-  /* This will change the time it takes to move to next slide */
+/*TIEMPO DE LA ANIMACION TOTAL DEL SLIDER DESDE QUE EMPIEZA*/
   -webkit-animation-duration: 100s;
   animation-duration: 100s;
   -webkit-animation-iteration-count: infinite;

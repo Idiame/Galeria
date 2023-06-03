@@ -12,11 +12,4 @@ module.exports = {
         }
         return res.redirect('/upload')
     },
-
-//     usuarioBien(req, res, next){
-//         if(req.isAuthenticated()){
-//             return true
-//         }
-//         return false
-//     }
 }
